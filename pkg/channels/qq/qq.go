@@ -824,7 +824,7 @@ func (c *QQChannel) downloadHeaders() map[string]string {
 		if tk, err := c.tokenSource.Token(); err == nil && tk.AccessToken != "" {
 			auth := strings.TrimSpace(tk.TokenType + " " + tk.AccessToken)
 			if auth != "" {
-				headers["Authorization"] = auth
+				headers["Authorization"] = "QQBot " + auth
 			}
 		}
 	}
